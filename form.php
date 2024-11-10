@@ -6,4 +6,7 @@ $month = $_POST['month'];
 $year = $_POST['year'];
 $cvc = $_POST['cvc'];
 
-echo "Cardholder Name: $cardholderName <br>";
+if (empty($cardholderName) || empty($cardNumber) || empty($month) || empty($year) || empty($cvc)) {
+    echo "Please fill all the fields";
+    return;
+}

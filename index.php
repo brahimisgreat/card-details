@@ -20,33 +20,50 @@
         <img src="./images/bg-card-front.png" class="backCard w-72 absolute bottom-0" alt="image of fake card">
     </div>
 
-    <form action="form.php" method="post" class="bg-white relative top-20 w-11/12 px-8 pt-6 pb-8 mb-4">
+
+    <form action="index.php" method="post" class="bg-white relative top-20 w-11/12 px-8 pt-6 pb-8 mb-4">
+    <?php 
+           if(isset($_POST["confirm"])){
+               $name = $_POST["name"];
+               $cardNumber = $_POST["cardNumber"];
+               $month = $_POST["month"];
+               $year = $_POST["year"];
+               $cvc = $_POST["cvc"];
+
+                if(empty($name) || empty($cardNumber) || empty($month) || empty($year) || empty($cvc)){
+                    echo "Please fill all the fields";
+                }
+                if(!is_numeric($cardNumber) || !is_numeric($cvc)){
+                    echo "Please enter a valid card number or cvc";
+                }
+            }
+        ?>
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
         CARDHOLDER NAME
       </label>
-      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cardholderName" value="cardholderName" id="username" type="text" placeholder="e.g Brahim Coulibaly">
+      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name"  id="username" type="text" placeholder="e.g Brahim Coulibaly">
     </div>
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="number">
         CARD NUMBER 
       </label>
-      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cardNumber" value="cardNumber" id="username" type="text" placeholder="e.g 1234 5678 9123 0000">
+      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cardNumber" id="username" type="text" placeholder="e.g 1234 5678 9123 0000">
     </div>
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
             EXP.DATE (MM/YY) CVC
       </label>
       <div class="flex gap-3">
-          <input required class="shadow  appearance-none border rounded  h-14 w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="month" value="month" id="username" type="text" placeholder="MM" req>
-          <input required class="shadow appearance-none border rounded  h-14 w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="year" value="year" id="username" type="text" placeholder="YY">
-          <input required class="shadow appearance-none border rounded  h-14 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cvc" value="cvc" id="username" type="text" placeholder="e.g 123">
+          <input required class="shadow  appearance-none border rounded  h-14 w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="month"  id="username" type="text" placeholder="MM" req>
+          <input required class="shadow appearance-none border rounded  h-14 w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="year"  id="username" type="text" placeholder="YY">
+          <input required class="shadow appearance-none border rounded  h-14 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cvc"  id="username" type="text" placeholder="e.g 123">
         </div>
     </div>
     
     <div class="flex items-center justify-between">
-      <button class="bg-violet-950 hover:bg-violet-700 w-full rounded-lg h-14 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-        Sign In
+      <button  name="confirm" class="bg-violet-950 hover:bg-violet-700 w-full rounded-lg h-14 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        confirm
       </button>
     </div>
   </form>
