@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,9 +12,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="flex  flex-col items-center ">
+<?php 
+
+?>
+
+
     <div class="absolute w-full top-0 ">
         <img class="img " src="./images/bg-main-mobile.png" alt="colorful background image">
     </div>
+    
 
     <div class="w-11/12  relative  h-64 top-20 z-10">
         <img src="./images/bg-card-back.png" class="frontCard w-72 absolute right-0" alt="image of fake card">
@@ -48,7 +55,7 @@
       <label class="block text-gray-700 text-sm font-bold mb-2" for="number">
         CARD NUMBER 
       </label>
-      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cardNumber" id="username" type="text" placeholder="e.g 1234 5678 9123 0000">
+      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cardNumber" id="username" type="text" placeholder="e.g 1234 5678 9123 0000" maxlength="16" minlength="16" >
     </div>
     <div class="mb-4">
       <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
