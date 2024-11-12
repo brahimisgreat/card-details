@@ -1,80 +1,97 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body class="flex  flex-col items-center ">
-<?php 
-
-?>
-
-
-    <div class="absolute w-full top-0 ">
-        <img class="img " src="./images/bg-main-mobile.png" alt="colorful background image">
+<body>
+<form class="needs-validation" novalidate>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom01">First name</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
     </div>
-    
-
-    <div class="w-11/12  relative  h-64 top-20 z-10">
-        <img src="./images/bg-card-back.png" class="frontCard w-72 absolute right-0" alt="image of fake card">
-        <img src="./images/bg-card-front.png" class="backCard w-72 absolute bottom-0" alt="image of fake card">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustom02">Last name</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
     </div>
-
-
-    <form action="index.php" method="post" class="bg-white relative top-20 w-11/12 px-8 pt-6 pb-8 mb-4">
-    <?php 
-           if(isset($_POST["confirm"])){
-               $name = $_POST["name"];
-               $cardNumber = $_POST["cardNumber"];
-               $month = $_POST["month"];
-               $year = $_POST["year"];
-               $cvc = $_POST["cvc"];
-
-                if(empty($name) || empty($cardNumber) || empty($month) || empty($year) || empty($cvc)){
-                    echo "Please fill all the fields";
-                }
-                if(!is_numeric($cardNumber) || !is_numeric($cvc)){
-                    echo "Please enter a valid card number or cvc";
-                }
-            }
-        ?>
-    <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-        CARDHOLDER NAME
-      </label>
-      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="name"  id="username" type="text" placeholder="e.g Brahim Coulibaly">
-    </div>
-    <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="number">
-        CARD NUMBER 
-      </label>
-      <input required class="shadow appearance-none border rounded w-full  h-14 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cardNumber" id="username" type="text" placeholder="e.g 1234 5678 9123 0000" maxlength="16" minlength="16" >
-    </div>
-    <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
-            EXP.DATE (MM/YY) CVC
-      </label>
-      <div class="flex gap-3">
-          <input required class="shadow  appearance-none border rounded  h-14 w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="month"  id="username" type="text" placeholder="MM" req>
-          <input required class="shadow appearance-none border rounded  h-14 w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="year"  id="username" type="text" placeholder="YY">
-          <input required class="shadow appearance-none border rounded  h-14 w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="cvc"  id="username" type="text" placeholder="e.g 123">
+    <div class="col-md-4 mb-3">
+      <label for="validationCustomUsername">Username</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
         </div>
+        <input type="text" class="form-control" id="validationCustomUsername" placeholder="Username" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
     </div>
-    
-    <div class="flex items-center justify-between">
-      <button  name="confirm" class="bg-violet-950 hover:bg-violet-700 w-full rounded-lg h-14 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
-        confirm
-      </button>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustom03">City</label>
+      <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
     </div>
-  </form>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom04">State</label>
+      <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+      <div class="invalid-feedback">
+        Please provide a valid state.
+      </div>
+    </div>
+    <div class="col-md-3 mb-3">
+      <label for="validationCustom05">Zip</label>
+      <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        Agree to terms and conditions
+      </label>
+      <div class="invalid-feedback">
+        You must agree before submitting.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit">Submit form</button>
+</form>
 
-   
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
 </body>
 </html>
