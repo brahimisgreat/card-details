@@ -3,14 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body{
+    font-family: 'Roboto', sans-serif;
     width: 100vw;
     height: 100vh;
-    background-color: aqua;
 }
 
-.errCN{
+
+#errName{
     border: red 2px solid;
 }
 
