@@ -1,9 +1,10 @@
 <?php 
   $errCardNumber = "form-control";
-  $errMonth;
-  $errYear;
-  $errCvc;
+  $errMonthMessage;
+  $errYearMessage;
+  $errCvcMessage;
   $errName = "form-control";
+  $errCardNumberMessage= null;
 ?>
 
 <!DOCTYPE html>
@@ -20,11 +21,26 @@
   <?php 
     if(isset($_POST['submit'])) {
         $cardName = $_POST['cardName'];
+        $cardNumber = $_POST['cardNumber'];
+        $month = $_POST['month'];
+        $year = $_POST['year'];
+        $cvc = $_POST['cvc'];
 
-        if(empty($cardName)) {
-          $errName = "errName ";
-        }
-      }
+        if(strlen($cardNumber) == 0) {
+          $errCardNumberMessage = "Card number cannot be blank";
+        }else if  (!is_numeric($cardNumber))  {
+          $errCardNumberMessage = "wrong format, numbers only";
+        }else if (strlen($cardNumber) < 16 || strlen($cardNumber) > 16) {
+          $errCardNumberMessage = "Card number cannot be blank";
+
+
+          
+
+        
+      
+    }
+  }
+      
     
   ?>
 
@@ -36,8 +52,9 @@
     </div>
 
     <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <label for="exampleInputPassword1">CARD NUMBER</label>
+      <input type="text" name="cardNumber" class="form-control" id=<?= $errCardNumber ?> placeholder="Password">
+      <small id="emailHelp" class="form-text text-muted"><?=  $errCardNumberMessage  ?></small>
     </div>
 
     <div class="dad form-group">
