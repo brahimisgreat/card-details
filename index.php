@@ -28,56 +28,51 @@ $inputCvcRed = "";
 
 <body>
   <main>
-    <form action="index.php" method="post">
+    <form action="includes/formHandler.php" method="post">
       <?php
-      if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $CardNumber = $_POST['cardNumber'];
-        $month = $_POST['month'];
-        $year = $_POST['year'];
-        $cvc = $_POST['cvc'];
 
-        if (empty($name)) {
-          $nameErrMessage = "Name is required";
-          $inputNameRed = "border border-red-500";
-        } else if (empty($CardNumber)) {
-          $numberErrMessage = "Card Number is required";
-          $inputNumberRed = "border border-red-500";
-        } else if (strlen($CardNumber) < 16 || strlen($CardNumber) > 16) {
-          $numberErrMessage = "Card Number must be 16 digits";
-          $inputNumberRed = "border border-red-500";
-        } else if (!is_numeric($CardNumber)) {
-          $numberErrMessage = "Card Number must be a number";
-          $inputNumberRed = "border border-red-500";
-        } else if (empty($month)) {
-          $expMonthErrMessage = "Can't be blank";
-          $inputMonthRed = "border border-red-500";
-        } else if (strlen($month) < 2 || strlen($month) > 2) {
-          $expMonthErrMessage = "Month must be 2 digits";
-          $inputMonthRed = "border border-red-500";
-        } else if (!is_numeric($month)) {
-          $expMonthErrMessage = "Month must be a number";
-          $inputMonthRed = "border border-red-500";
-        } else if (empty($year)) {
-          $expYearErrMessage = "Can't be blank";
-          $inputYearRed = "border border-red-500";
-        } else if (strlen($year) < 2 || strlen($year) > 2) {
-          $expYearErrMessage = "Year must be 2 digits";
-          $inputYearRed = "border border-red-500";
-        } else if (!is_numeric($year)) {
-          $expYearErrMessage = "Year must be a number";
-          $inputYearRed = "border border-red-500";
-        } else if (empty($cvc)) {
-          $cvcErrMessage = "CVC is required";
-          $inputCvcRed = "border border-red-500";
-        } else if (strlen($cvc) < 3 || strlen($cvc) > 3) {
-          $cvcErrMessage = "CVC must be 3 digits";
-          $inputCvcRed = "border border-red-500";
-        } else if (!is_numeric($cvc)) {
-          $cvcErrMessage = "CVC must be a number";
-          $inputCvcRed = "border border-red-500";
-        }
-      }
+
+        // if (empty($name)) {
+        //   $nameErrMessage = "Name is required";
+        //   $inputNameRed = "border border-red-500";
+        // } else if (empty($CardNumber)) {
+        //   $numberErrMessage = "Card Number is required";
+        //   $inputNumberRed = "border border-red-500";
+        // } else if (strlen($CardNumber) < 16 || strlen($CardNumber) > 16) {
+        //   $numberErrMessage = "Card Number must be 16 digits";
+        //   $inputNumberRed = "border border-red-500";
+        // } else if (!is_numeric($CardNumber)) {
+        //   $numberErrMessage = "Card Number must be a number";
+        //   $inputNumberRed = "border border-red-500";
+        // } else if (empty($month)) {
+        //   $expMonthErrMessage = "Can't be blank";
+        //   $inputMonthRed = "border border-red-500";
+        // } else if (strlen($month) < 2 || strlen($month) > 2) {
+        //   $expMonthErrMessage = "Month must be 2 digits";
+        //   $inputMonthRed = "border border-red-500";
+        // } else if (!is_numeric($month)) {
+        //   $expMonthErrMessage = "Month must be a number";
+        //   $inputMonthRed = "border border-red-500";
+        // } else if (empty($year)) {
+        //   $expYearErrMessage = "Can't be blank";
+        //   $inputYearRed = "border border-red-500";
+        // } else if (strlen($year) < 2 || strlen($year) > 2) {
+        //   $expYearErrMessage = "Year must be 2 digits";
+        //   $inputYearRed = "border border-red-500";
+        // } else if (!is_numeric($year)) {
+        //   $expYearErrMessage = "Year must be a number";
+        //   $inputYearRed = "border border-red-500";
+        // } else if (empty($cvc)) {
+        //   $cvcErrMessage = "CVC is required";
+        //   $inputCvcRed = "border border-red-500";
+        // } else if (strlen($cvc) < 3 || strlen($cvc) > 3) {
+        //   $cvcErrMessage = "CVC must be 3 digits";
+        //   $inputCvcRed = "border border-red-500";
+        // } else if (!is_numeric($cvc)) {
+        //   $cvcErrMessage = "CVC must be a number";
+        //   $inputCvcRed = "border border-red-500";
+        // }
+      
 
 
       ?>
