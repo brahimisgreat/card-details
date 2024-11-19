@@ -1,9 +1,16 @@
 <?php
 $nameErrMessage = null;
 $cardNumberErrMessage = null;
+$monthErrMessage = null;
+$yearErrMessage = null;
+$cvcErrMessage = null;
 
+//variables to switch classes border-red-500
 $nameClass = null;
 $cardNumberClass = null;
+$monthClass = null;
+$yearClass = null;
+$cvcClass = null;
 ?>
 
 <!DOCTYPE html>
@@ -34,11 +41,25 @@ $cardNumberClass = null;
 
     <div>
       <label for="cardNumber">EXP .DATE (MM/YY)</label>
+
       <div>
-        <input class="<?= $cardNumberClass ?>" type="number" name="cardNumber" id="cardNumber">
-        <p class="text-red-500"><?php echo $cardNumberErrMessage; ?></p>
+        <div>
+          <input class="<?= $monthClass ?>" type="number" name="month">
+          <p class="text-red-500"><?php echo $monthErrMessage; ?></p>
+        </div>
+
+        <div>
+          <input class="<?= $yearClass ?>" type="number" name="year">
+          <p class="text-red-500"><?php echo $yearClass; ?></p>
+        </div>
+
+        <div>
+          <input class="<?= $cvcClass ?>" type="number" name="cvc" >
+          <p class="text-red-500"><?php echo $cvcErrMessage; ?></p>
+        </div>
       </div>
     </div>
+
     <input type="submit" name="submit">
   </form>
 
