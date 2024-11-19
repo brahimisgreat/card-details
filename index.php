@@ -18,8 +18,12 @@ $cvcClass = null;
 
 <head>
   <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
 
   <title>Document</title>
 </head>
@@ -29,7 +33,7 @@ $cvcClass = null;
   <form action="" method="post">
     <div>
       <label for="cardName">CardHolder Name:</label>
-      <input class="<?php echo $nameClass ?>" type="text" name="cardName" id="cardName">
+      <input type="text" name="cardName" id="cardName">
       <p class="text-red-500"><?php echo $nameErrMessage; ?></p>
     </div>
 
@@ -54,7 +58,7 @@ $cvcClass = null;
         </div>
 
         <div>
-          <input class="<?= $cvcClass ?>" type="number" name="cvc" >
+          <input class="<?= $cvcClass ?>" type="number" name="cvc">
           <p class="text-red-500"><?php echo $cvcErrMessage; ?></p>
         </div>
       </div>
