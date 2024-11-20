@@ -66,7 +66,7 @@ $cvcClass = null;
 
     <input type="submit" name="submit">
   </form>
-
+<a href="./includes/database.php">go here</a>
 </body>
 
 </html>

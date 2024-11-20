@@ -50,6 +50,16 @@
         } elseif( strlen($cvc) < 3 || strlen($cvc) > 3){
             $cvcErrMessage = "CVC must be 3 digits";
             $cvcClass = "border-2 border-red-500";
+    }else{
+        require_once 'database.php';
+        $sql = "INSERT INTO cards (Name, cardNumber, expMonth, expYear, Cvc) VALUES ('$name', '$cardNumber', '$month', '$year', '$cvc')";
+        $stmt = mysqli_stmt_init($conn);
+        $prepareStmt = mysqli_stmt_prepare($stmt, $sql);
+        if($prepareStmt){
+            mysqli_stmt_execute($stmt);
+            echo "Data inserted successfully";
     }
+
+}
 }
 ?>
