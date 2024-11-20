@@ -29,7 +29,17 @@ $cvcClass = null;
 </head>
 
 <body>
+  <div class="bgImage"></div>
+
+  <div class="relative cardContainer"> 
+      <img class="absolute bottom-0 z-10 " src="./images/bg-card-front.png" alt="">    
+      <img  class="absolute right-0" src="./images/bg-card-back.png" alt="">    
+
+  </div>
+
+
   <?php include 'includes/formHandler.php'; ?>
+
   <form action="" method="post">
     <div>
       <label for="cardName">CardHolder Name:</label>
