@@ -43,7 +43,7 @@
             $yearClass = "border-2 border-red-500";
         } elseif (empty($cvc)) {
         $cvcErrMessage = "CVC is required";
-        $cvcClass = "border-2 border-red-500";
+        $cvcClass = "border-2 border-red-500 w-28";
         } elseif( !is_numeric($cvc)){
             $cvcErrMessage = "Wrong format, numbers only";
             $cvcClass = "border-2 border-red-500";

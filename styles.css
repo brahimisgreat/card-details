@@ -1,46 +1,85 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "space grotesk", sans-serif;
-    width: 100%;
-    height: 100vh;
+  font-family: "space grotesk", sans-serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #21092F;
 }
 
 .bgImage {
-    background: url('./images/bg-main-mobile.png') no-repeat center center/cover;
-    width: 100%;
-    height: 15rem; /* 240px converted to rem assuming 1rem = 16px */
+  background: url("./images/bg-main-mobile.png") no-repeat center center/cover;
+  width: 100%;
+  height: 15rem; /* 240px converted to rem assuming 1rem = 16px */
 }
 
-img{
-    width: 285px;
+img {
+  width: 285px;
+}
+
+form {
+  width: 327px;
+  height: 328px;
+  margin-top: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.daddy{
+    width: 327px;
+}
+
+.cardContainer {
+  width: 343px;
+  height: 251px;
 
 }
 
+label{
+    font-size: 12px;
+}
 
+input {
+  border-radius: 8px;
+  border: 1px solid var(--Light-Grey, #dfdee0);
+  height: 45px;
+}
 
-.cardContainer{
-    width: 343px;
-    height: 251px;
-    border: solid red;
+input::placeholder{
+    margin-left: 5px;
 }
 
 input:invalid {
-    border: 0.125rem solid red; /* 2px converted to rem assuming 1rem = 16px */
+  border: 0.125rem solid red; /* 2px converted to rem assuming 1rem = 16px */
+}
+
+.aa input{
+    width: 72px;
+}
+
+.button{
+    border-radius: 8px;
+background: var(--Deep-Violet, #21092F);
+color: white;
+min-height: 53px;
 }
 
 @media (min-width: 768px) {
-    .bgImage {
-        background: url('./images/bg-main-desktop.png');
-        height: 20rem; /* Adjusted height for larger screens */
-    }
+  .bgImage {
+    background: url("./images/bg-main-desktop.png");
+    height: 20rem; /* Adjusted height for larger screens */
+  }
 
-    .cardContainer {
-        width: 400px;
-        height: 300px;
-    }
+  .cardContainer {
+    width: 400px;
+    height: 300px;
+  }
 }
